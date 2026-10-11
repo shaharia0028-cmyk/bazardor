@@ -4,7 +4,7 @@ import { formatBanglaDate } from "@/lib/format";
 
 export default function Hero() {
   return (
-    <section className="grid items-center gap-6 rounded-3xl border border-base-content/10 bg-base-100 p-6 md:grid-cols-2 md:p-10">
+    <section className="grid items-center gap-6 rounded-3xl border border-base-content/10 bg-base-100 p-5 sm:p-6 md:grid-cols-2 md:p-10">
       <div className="flex flex-col items-start gap-3">
         {/* eyebrow */}
         <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">

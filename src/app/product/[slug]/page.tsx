@@ -75,7 +75,7 @@ export default async function ProductPage({ params }: Props) {
         </span>
 
         <div className="min-w-0 flex-1 space-y-1">
-          <h1 className="text-3xl font-bold">{product.name}</h1>
+          <h1 className="text-2xl font-bold sm:text-3xl">{product.name}</h1>
           <p className="text-sm text-base-content/70">
             {product.unit} · {product.category.name}
           </p>
@@ -89,7 +89,7 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="rounded-2xl bg-base-200 px-5 py-4 text-center">
+        <div className="w-full rounded-2xl bg-base-200 px-5 py-4 text-center md:w-auto">
           <p className="text-sm text-base-content/70">আজকের দাম</p>
           <p className="text-3xl font-bold">{formatNumber(product.price)}</p>
           <p className="text-sm text-base-content/70">টাকা / {shortUnit(product.unit)}</p>

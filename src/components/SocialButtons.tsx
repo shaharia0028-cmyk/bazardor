@@ -52,10 +52,10 @@ export default function SocialButtons({ callbackURL = "/" }: { callbackURL?: str
           type="button"
           onClick={() => handleSocial(provider)}
           disabled={pending !== null}
-          className="btn btn-outline btn-sm sm:btn-md border-base-content/20 bg-base-100 font-semibold hover:bg-base-300"
+          className="btn btn-outline h-auto min-h-10 border-base-content/20 bg-base-100 py-2 font-semibold hover:bg-base-300"
         >
           {pending === provider ? <span className="loading loading-spinner loading-xs" /> : icon}
-          <span className="text-xs sm:text-sm">{label}</span>
+          <span className="text-center text-xs leading-tight sm:text-sm">{label}</span>
         </button>
       ))}
     </div>
