@@ -12,4 +12,4 @@ export const mongoClient = globalForMongo.mongoClient ?? new MongoClient(uri);
 
 if (process.env.NODE_ENV !== "production") globalForMongo.mongoClient = mongoClient;
 
-export const db = mongoClient.db(process.env.MONGODB_DB || "bazardor");
+export const db = mongoClient.db(process.env.MONGODB_DB || "bazardor26");
