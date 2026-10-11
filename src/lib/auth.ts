@@ -3,11 +3,6 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { nextCookies } from "better-auth/next-js";
 import { db } from "./mongodb";
 
-const googleId = process.env.GOOGLE_CLIENT_ID;
-const googleSecret = process.env.GOOGLE_CLIENT_SECRET;
-const githubId = process.env.GITHUB_CLIENT_ID;
-const githubSecret = process.env.GITHUB_CLIENT_SECRET;
-
 export const auth = betterAuth({
   database: mongodbAdapter(db),
   secret: process.env.BETTER_AUTH_SECRET,
@@ -17,14 +12,18 @@ export const auth = betterAuth({
     enabled: true,
     // After sign-up the user is sent to the sign-in page (assignment requirement).
     autoSignIn: false,
-    // Email verification / password reset are intentionally left out.
     requireEmailVerification: false,
   },
 
-  // A provider is only switched on once its keys are present in .env
   socialProviders: {
-    ...(googleId && googleSecret ? { google: { clientId: googleId, clientSecret: googleSecret } } : {}),
-    ...(githubId && githubSecret ? { github: { clientId: githubId, clientSecret: githubSecret } } : {}),
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    },
+    github: {
+      clientId: process.env.GITHUB_CLIENT_ID as string,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+    },
   },
 
   // Must be the last plugin: lets server actions / components set cookies.
