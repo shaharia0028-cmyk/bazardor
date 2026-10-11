@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="bn" data-theme="bazardor" className={hindSiliguri.variable}>
+    <html lang="bn" data-theme="bazardor" data-scroll-behavior="smooth" className={hindSiliguri.variable}>
       <body className="flex min-h-screen flex-col antialiased">
         <Header />
         <PriceTicker />
